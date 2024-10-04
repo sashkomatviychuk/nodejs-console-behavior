@@ -1,6 +1,6 @@
-const fs = require('fs');
+import { createWriteStream } from 'fs';
 
-const writeStream = fs.createWriteStream('output.log');
+const writeStream = createWriteStream('output.log');
 
 const originalWrite = process.stdout.write;
 
