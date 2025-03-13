@@ -56,6 +56,10 @@ const server = createServer((socket) => {
     const message = buffer.toString().trim();
     const [command, key, value] = splitString(message);
 
+    if (command.toLowerCase().includes('exit')) {
+      return socket.end();
+    }
+
     const fn = routes[command];
 
     if (!isFunction(fn)) {
