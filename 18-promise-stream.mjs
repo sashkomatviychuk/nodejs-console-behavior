@@ -1,6 +1,6 @@
 const fetchVideo = (id) => {
   return new Promise((resolve) => {
-    setTimeout(() => resolve('content data for #id ' + id), 1000);
+    setTimeout(() => resolve('content data for #id ' + id), 100);
   });
 };
 
@@ -15,7 +15,7 @@ async function processVideosSequentially(ids, processVideo) {
   for (const id of ids) {
     try {
       const video = await fetchVideo(id);
-      await processVideo({ id, video });
+      await saveToDisk({ id, video });
     } catch {
       console.log('error during processing the video');
     }
