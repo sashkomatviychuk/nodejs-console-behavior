@@ -37,7 +37,7 @@ function createTask(id, delay, shouldFail = false) {
 }
 
 async function main() {
-  const tasks = [createTask(1, 1000), createTask(2, 1500, true), createTask(3, 2000)];
+  const tasks = [createTask(1, 1000), createTask(2, 1500), createTask(3, 2000)];
 
   try {
     const results = await runWithCancelOnReject(tasks);
