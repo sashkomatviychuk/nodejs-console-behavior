@@ -13,6 +13,10 @@
     "@types/node": "^22.7.4"
   },
   "dependencies": {
-    "generic-pool": "^3.9.0"
+    "@langchain/openai": "^1.0.0",
+    "generic-pool": "^3.9.0",
+    "langchain": "^1.0.1",
+    "openai": "^6.5.0",
+    "zod": "^4.1.12"
   }
 }
