@@ -35,3 +35,5 @@ const ids = [101, 102, 103];
 for await (const { id, video } of fetchVideoStream(ids)) {
   await saveToDisk({ id, video });
 }
+
+// https://blog.stackademic.com/beyond-async-await-10-advanced-js-ts-techniques-senior-engineers-use-e9e687940f4d
