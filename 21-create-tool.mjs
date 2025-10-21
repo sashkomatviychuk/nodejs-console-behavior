@@ -1,6 +1,7 @@
 import * as z from 'zod';
 import { ChatOpenAI } from '@langchain/openai';
 import { createAgent, tool } from 'langchain';
+import { RecursiveCharacterTextSplitter } from '@langchain/textsplitters';
 
 const fetchWeather = async (location) => {
   return {
@@ -9,6 +10,13 @@ const fetchWeather = async (location) => {
     wind: 12,
   };
 };
+
+const splitter = new RecursiveCharacterTextSplitter({
+  chunkOverlap: 10,
+  chunkSize: 150,
+  separators: ['\n\n', '\n', '.', ' '],
+});
+await splitter.splitDocuments(['some text']);
 
 const model = new ChatOpenAI({
   modelName: 'gpt-4',
